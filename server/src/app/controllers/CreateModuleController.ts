@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateModuleService } from "../services/ModulesService";
+import { CreateModuleService } from "../services/CreateModulesService";
 
 class CreateModuleController {
     async handle(req: Request, res: Response) {
