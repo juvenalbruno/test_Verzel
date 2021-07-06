@@ -1,0 +1,27 @@
+version: "3.7"
+
+services: 
+    
+    db:
+        container_name: db_app
+        image: postgres
+        restart: always
+        environment: 
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=database
+        ports: 
+            - "5432:5432"
+        volumes: 
+            - ./pgData:/var/lib/postgresql/data
+
+    app:
+        container_name: my_app
+        build: .
+        command: yarn dev
+        volumes: 
+            - .:/usr/src/app
+        links: 
+            - db
+        ports: 
+            - "3333:3333"
