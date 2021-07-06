@@ -13,10 +13,6 @@ export class ModulesTable1625578962012 implements MigrationInterface {
                 {
                     name: "modules_name",
                     type: "varchar",
-                },
-                {
-                    name: "happen",
-                    type: "varchar"
                 }
             ]
         }))

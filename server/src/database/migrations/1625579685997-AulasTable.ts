@@ -23,6 +23,10 @@ export class AulasTable1625579685997 implements MigrationInterface {
                     type: "varchar",
                 },
                 {
+                    name: "happen",
+                    type: "varchar"
+                },
+                {
                     name: "modules_id",
                     type: "varchar"
                 }  

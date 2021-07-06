@@ -16,7 +16,10 @@ class Aulas{
 
     @Column()
     Link_img: string;
-
+    
+    @Column()
+    happen: string;
+    
     @Column()
     modules_id: string;
 

@@ -10,9 +10,6 @@ class Modules {
     @Column()
     modules_name: string;
 
-    @Column()
-    happen: string;
-
     constructor() {
         if (!this.id)
             this.id = uuid();

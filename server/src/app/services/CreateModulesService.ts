@@ -3,11 +3,10 @@ import { ModulesRepositories } from "../repositories/ModulesRepositories";
 
 interface IModuleRequest {
     modules_name: string;
-    happen: string;
 }
 
 class CreateModuleService {
-    async execute({ modules_name, happen }: IModuleRequest) {
+    async execute({ modules_name }: IModuleRequest) {
         const moduleRepositories = getCustomRepository(ModulesRepositories);
 
         if (!modules_name)
@@ -18,7 +17,7 @@ class CreateModuleService {
         if (moduleAlreadyExists)
             throw new Error("Module already exists");
         
-        const module = moduleRepositories.create({ modules_name, happen });
+        const module = moduleRepositories.create({ modules_name });
 
         await moduleRepositories.save(module);
         
