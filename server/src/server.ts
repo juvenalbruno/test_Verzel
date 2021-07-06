@@ -4,7 +4,8 @@ import { router } from './router';
 import 'reflect-metadata';
 import './database/connect';
 
-const HOST = 3333;
+const PORT = 3333;
+const HOST = '0.0.0.0'
 
 const app = express();
 
@@ -22,4 +23,4 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     })
 });
 
-app.listen(HOST, () => console.log(`>>> Server is running in http://localhost:${HOST}/`))
+app.listen(PORT, HOST, () => console.log(`>>> Server is running in http://${HOST}:${PORT}`))
