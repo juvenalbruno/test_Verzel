@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { BeforeUpdate, Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 import { Modules } from "./Modules";
 
@@ -9,15 +9,19 @@ class Aulas{
     readonly id: string;
 
     @Column()
+    @BeforeUpdate()
     aula_name: string;
 
     @Column()
+    @BeforeUpdate()
     link_video: string;
 
     @Column()
+    @BeforeUpdate()
     Link_img: string;
     
     @Column()
+    @BeforeUpdate()
     happen: string;
     
     @Column()
