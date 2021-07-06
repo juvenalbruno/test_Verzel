@@ -1,4 +1,4 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 import { CreateAulaController } from "./app/controllers/CreateAulaController";
 import { CreateModuleController } from "./app/controllers/CreateModuleController";
 import { CreateUserController } from "./app/controllers/CreateUserController";
