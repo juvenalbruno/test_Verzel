@@ -19,6 +19,10 @@ export function Modules() {
                     <h1>Módulos</h1>
                     <p>Selecione o módulo para ver as aulas disponíveis:</p>
                 </div>
+
+                <div className="modules-content">
+                    
+                </div>
             </main>
         </div>
     );
