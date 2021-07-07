@@ -1,16 +1,17 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
 import { Modules } from './pages/Modules';
-import { Login } from './pages/Login';
+import { Register } from './pages/Register';
 
-import { Global } from './styles/global';
+import './styles/global.scss'
 
 export function App() {
   return (
     <BrowserRouter>
-    <Global />
       <Switch>
         <Route path="/modules" component={Modules} />
-        <Route path="/" component={Login} exact />
+        <Route path="/user/register" component={Register} />
+        <Route path="/" component={Home} exact />
       </Switch> 
     </BrowserRouter>
   );
