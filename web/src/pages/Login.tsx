@@ -1,10 +1,10 @@
-import { HomeComponent } from '../components/HomeComponent';
+import { LoginComponent } from '../components/LoginComponent';
 
 import LogoIMG from '../assets/img/logo.png';
 
 import '../styles/home.scss';
 
-export function Home() {
+export function Login() {
     return (
         <div id="page-auth">
             <aside>
@@ -12,7 +12,7 @@ export function Home() {
                 <strong>Cadastre seus Módulos de aulas</strong>
             </aside>
             <main>
-                <HomeComponent />
+                <LoginComponent />
             </main>
         </div>
     )

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 
-import { Button } from "../components/Button";
+import { Button } from "./Button";
 
 import "../styles/home.scss";
 
-function HomeComponent() {
+function LoginComponent() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -16,7 +16,7 @@ function HomeComponent() {
 
   return (
     <div className="main-content">
-      <h2>Login</h2>
+      <h2>Login Adm</h2>
       <form onSubmit={() => {}}>
         <input
           type="text"
@@ -40,4 +40,4 @@ function HomeComponent() {
   );
 }
 
-export { HomeComponent };
+export { LoginComponent };
