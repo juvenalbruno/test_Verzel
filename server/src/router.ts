@@ -37,7 +37,7 @@ router
     .post("/login", authUserController.handle);
 
 router
-    .get("/module", listingModulesController.handle)
+    .get("/modules", listingModulesController.handle)
     .post("/modules", Auth, Admin, createModuleController.handle)
     .put("/modules/:id", Auth, Admin, updateModulesController.handle)
     .delete("/modules/:id", Auth, Admin, deleteModulesController.handle);
