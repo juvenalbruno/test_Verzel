@@ -16,9 +16,26 @@
                 max-height: 55px;
             }
 
-            button {
+            a {
                 background: #00aeff;
                 border: 1px solid white;
+                height: 50px;
+                border-radius: 8px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 500;
+                color: #FFF;
+                padding: 0 32px;
+            
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration: 0;
+            
+                transition: filter 0.2s;
+
+                &:hover {
+                    filter: brightness(0.9);
+                }
             }
         }
     }

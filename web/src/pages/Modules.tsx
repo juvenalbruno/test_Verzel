@@ -1,7 +1,8 @@
-import { Button } from '../components/Button';
-
-import LogoIMG from '../assets/img/logo.png';
+import { Link } from 'react-router-dom';
 import { FaConnectdevelop } from 'react-icons/fa';
+
+import { Button } from '../components/Button';
+import LogoIMG from '../assets/img/logo.png';
 
 import '../styles/modules.scss';
 
@@ -11,7 +12,7 @@ export function Modules() {
             <header>
                 <div className="content">
                     <img src={LogoIMG} alt="Verzel" />
-                    <Button>Entrar</Button>
+                    <Link to="/user/login">Entrar</Link>
                 </div>
             </header>
 
