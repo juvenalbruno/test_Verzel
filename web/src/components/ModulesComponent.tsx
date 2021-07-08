@@ -1,26 +1,35 @@
-import { FaConnectdevelop } from 'react-icons/fa';
+import { useState } from "react";
+import { useEffect } from "react";
+import { FaConnectdevelop } from "react-icons/fa";
+import { api } from "../services/api";
 
-export function ModulesComponents() {
-    return (
-        <div id="page-modules">
-            <main>
-                <div className="modules-title">
-                    <h1>Módulos</h1>
-                    <p>Selecione o módulo para ver as aulas disponíveis:</p>
-                </div>
+type ModulesTypeProps = {
+  id: string;
+  name: string;
+};
 
-                <div className="modules-content">
-                    <div className="modules-wrapper">
-                        <div className="modules-icon">
-                            <FaConnectdevelop />
-                        </div>
-                        <div className="modules-info">
-                            <h1>Introdução e Preparatório</h1>
-                            <p>3 aulas</p>
-                        </div>
-                    </div>
-                </div>
-            </main>
+
+export function ModulesComponents({ id, name }: ModulesTypeProps) {
+
+  const [aulasQnt, setAulasQant] = useState([]);
+
+  useEffect(() => {
+    api.get(`/modules/aulas/${id}`).then(response => { setAulasQant(response.data) })
+  }, [id]);
+
+  return (
+    <div id="page-modules">
+      <main>
+        <div className="modules-wrapper">
+          <div className="modules-icon">
+            <FaConnectdevelop />
+          </div>
+          <div className="modules-info">
+            <h1>{name}</h1>
+            <p>{aulasQnt.length} aula(s)</p>
+          </div>
         </div>
-    );
+      </main>
+    </div>
+  );
 }
