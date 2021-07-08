@@ -1,6 +1,7 @@
 import { Button } from '../components/Button';
 
 import LogoIMG from '../assets/img/logo.png';
+import { FaConnectdevelop } from 'react-icons/fa';
 
 import '../styles/modules.scss';
 
@@ -21,7 +22,69 @@ export function Modules() {
                 </div>
 
                 <div className="modules-content">
-                    
+                    <div className="modules-wrapper">
+                        <div className="modules-icon">
+                            <FaConnectdevelop />
+                        </div>
+                        <div className="modules-info">
+                            <h1>Introdução e Preparatório</h1>
+                            <p>3/3 aulas</p>
+                        </div>
+                    </div>
+                    <div className="modules-wrapper">
+                        <div className="modules-icon">
+                            <FaConnectdevelop />
+                        </div>
+                        <div className="modules-info">
+                            <h1>Introdução e Preparatório</h1>
+                            <p>3/3 aulas</p>
+                        </div>
+                    </div>
+                    <div className="modules-wrapper">
+                        <div className="modules-icon">
+                            <FaConnectdevelop />
+                        </div>
+                        <div className="modules-info">
+                            <h1>Introdução e Preparatório</h1>
+                            <p>3/3 aulas</p>
+                        </div>
+                    </div>
+                    <div className="modules-wrapper">
+                        <div className="modules-icon">
+                            <FaConnectdevelop />
+                        </div>
+                        <div className="modules-info">
+                            <h1>Introdução e Preparatório</h1>
+                            <p>3/3 aulas</p>
+                        </div>
+                    </div>
+                    <div className="modules-wrapper">
+                        <div className="modules-icon">
+                            <FaConnectdevelop />
+                        </div>
+                        <div className="modules-info">
+                            <h1>Introdução e Preparatório</h1>
+                            <p>3/3 aulas</p>
+                        </div>
+                    </div>
+                    <div className="modules-wrapper">
+                        <div className="modules-icon">
+                            <FaConnectdevelop />
+                        </div>
+                        <div className="modules-info">
+                            <h1>Introdução e Preparatório</h1>
+                            <p>3/3 aulas</p>
+                        </div>
+                    </div>
+                    <div className="modules-wrapper">
+                        <div className="modules-icon">
+                            <FaConnectdevelop />
+                        </div>
+                        <div className="modules-info">
+                            <h1>Introdução e Preparatório</h1>
+                            <p>3/3 aulas</p>
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
