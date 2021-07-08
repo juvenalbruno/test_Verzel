@@ -1,5 +1,5 @@
 #page-modules {
-
+    padding-bottom: 55px;
     header {
         padding: 24px;
         background: #00aeff;
@@ -26,7 +26,6 @@
     main {
         max-width: 1100px;
         margin: 0 auto;
-        padding: 15px;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
@@ -50,11 +49,10 @@
 
         .modules-content {
             width: 100%;
-            height: 255px;
 
             display: flex;
             flex-wrap: wrap;
-            gap: 18px;
+            gap: 38px;
 
             cursor: pointer;
 
@@ -67,8 +65,8 @@
             border: 1px solid #00aeff;
             border-radius: 15px;
             padding: 15px;
-            max-width: 380px;
-            min-height: 100px;
+            width: 340px;
+            height: 100px;
 
             &:hover {
                 filter: brightness(0.8);
@@ -89,7 +87,7 @@
             .modules-info {
                 
                 h1 {
-                    font: 500 22px 'Roboto', sans-serif;
+                    font: 500 20px 'Roboto', sans-serif;
                     color: #00aeff;
                 }
 
@@ -97,6 +95,83 @@
                     font: 500 16px 'Roboto', sans-serif;
                 }
             }
+        }
+
+        .aulas-title {
+            margin: 42px 0 24px;
+            display: flex;
+            align-items: center;
+
+            h1 {
+                font: 500 32px 'Poppins', sans-serif;
+                color: #29292e;
+            }
+
+            p {
+                font: 500 20px 'Roboto', sans-serif;
+                color: #00aeff;
+            }
+
+            .aulas-icon {
+                background: #00aeff; 
+                border-radius: 12px;
+                padding: 20px;
+                margin-right: 12px;
+
+                svg {
+                    font-size: 30px;
+                    color: #FFF;
+                }
+            }
+        }
+
+        .aulas-content {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 55px;
+
+            transition: filter 0.2s;
+        }
+
+        .aulas-wrapper {
+            width: 328px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 35px;
+            border: 1px solid #00aeff;
+            border-radius: 20px;
+            
+
+            
+            img {
+                margin: 0 auto;
+                width: 250px;
+                height: 140px;
+                border-radius: 5px;
+            }
+            
+            h1 {
+                margin: 10px 0;
+                font: 500 26px 'Roboto', sans-serif;
+                color: #00aeff;
+                text-overflow: clip;
+            }
+
+            p {
+                font: 300 16px 'Roboto', sans-serif;
+                margin: 10px 0;
+                line-height: 1.5;
+                text-align: justify;
+                color:#29292e;
+            }
+
+            &:hover {
+                filter: brightness(0.8);
+            }
+
         }
     }
 }
