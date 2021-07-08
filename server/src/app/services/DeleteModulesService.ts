@@ -10,12 +10,12 @@ class DeleteModulesService {
         const modulesRepositories = getCustomRepository(ModulesRepositories);
 
         if (!id)
-            throw new Error("ID incorrect");
+            return;
         
         const modulesAlreadyExists = await modulesRepositories.findOne({ id });
 
         if (!modulesAlreadyExists)
-            throw new Error("ID incorrect");
+            return;
         
         modulesRepositories.delete(id);
 

@@ -10,12 +10,12 @@ class CreateModuleService {
         const moduleRepositories = getCustomRepository(ModulesRepositories);
 
         if (!modules_name)
-            throw new Error("Modules Name incorrect");
+            return;
         
         const moduleAlreadyExists = await moduleRepositories.findOne({ modules_name });
 
         if (moduleAlreadyExists)
-            throw new Error("Module already exists");
+            return;
         
         const module = moduleRepositories.create({ modules_name });
 

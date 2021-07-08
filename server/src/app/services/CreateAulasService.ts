@@ -14,12 +14,12 @@ class CreateAulasService{
         const aulaRepositories = getCustomRepository(AulasRepositories);
 
         if (!aula_name)
-            throw new Error(" Aula name is incorrect");
+            return;
         
         const aulaAlreadyExists = await aulaRepositories.findOne({ modules_id, aula_name, link_video, Link_img, happen });
 
         if (aulaAlreadyExists)
-            throw new Error("Aula already exists");
+            return;
         
         const aula = aulaRepositories.create({ modules_id, aula_name, link_video, Link_img, happen });
 

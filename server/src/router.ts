@@ -7,6 +7,7 @@ import { DeleteAulasController } from "./app/controllers/DeleteAulaController";
 import { DeleteModuleController } from "./app/controllers/DeleteModulesController";
 import { ListingAulasController } from "./app/controllers/ListingAulasController";
 import { ListingModulesController } from "./app/controllers/ListingModulesController";
+import { ListingUsersController } from "./app/controllers/ListingUsersController";
 import { UpdateAulasController } from "./app/controllers/UpdateAulasController";
 import { UpdateModuleController } from "./app/controllers/UpdateModulesController";
 
@@ -18,6 +19,7 @@ const router = Router();
 const authUserController = new AuthUserController();
 
 const createUserController = new CreateUserController();
+const listingUserController = new ListingUsersController();
 
 const createModuleController = new CreateModuleController();
 const listingModulesController = new ListingModulesController();
@@ -31,7 +33,8 @@ const deleteAulasController = new DeleteAulasController();
 
 
 router
-    .post("/users", createUserController.handle);
+    .post("/users", createUserController.handle)
+    .get("/users", listingUserController.handle);
 
 router
     .post("/login", authUserController.handle);
