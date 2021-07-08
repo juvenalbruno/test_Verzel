@@ -17,9 +17,9 @@ class DeleteModulesService {
         if (!modulesAlreadyExists)
             throw new Error("ID incorrect");
         
-        const module = modulesRepositories.delete(id);
+        modulesRepositories.delete(id);
 
-        return module;
+        return
     }
 }
 

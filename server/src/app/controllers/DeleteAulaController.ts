@@ -7,9 +7,9 @@ class DeleteAulasController {
 
         const deleteAulasService = new DeleteAulasService();
         
-        const aula = await deleteAulasService.execute({ id });
+        await deleteAulasService.execute({ id });
 
-        return res.json(aula);
+        return res.json("Deleted");
     }
 }
 

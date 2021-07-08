@@ -21,9 +21,9 @@ class UpdateAulasService{
         if (!aulaAlreadyExists)
             throw new Error("Aula not exists");
         
-        const aula = aulaRepositories.update(id, { aula_name, link_video, Link_img, happen });
+       aulaRepositories.update(id, { aula_name, link_video, Link_img, happen });
 
-        return aula;
+        return
     }
 }
 

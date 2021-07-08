@@ -8,9 +8,9 @@ class UpdateAulasController {
 
         const updateAulasService = new UpdateAulasService();
         
-        const module = await updateAulasService.execute({ id, aula_name, link_video, Link_img, happen  });
+        await updateAulasService.execute({ id, aula_name, link_video, Link_img, happen  });
 
-        return res.json(module);
+        return res.json("Auterated");
     }
 }
 

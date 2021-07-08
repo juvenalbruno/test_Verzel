@@ -18,9 +18,9 @@ class UpdateModulesService {
         if (!modulesAlreadyExists)
             throw new Error("ID incorrect");
         
-        const module = modulesRepositories.update(id, { modules_name });
+        modulesRepositories.update(id, { modules_name });
 
-        return module;
+        return
     }
 }
 

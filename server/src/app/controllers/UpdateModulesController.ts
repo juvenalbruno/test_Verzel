@@ -8,9 +8,9 @@ class UpdateModuleController {
 
         const updateModulesService = new UpdateModulesService();
         
-        const module = await updateModulesService.execute({ id, modules_name });
+        await updateModulesService.execute({ id, modules_name });
 
-        return res.json(module);
+        return res.json("Auterated");
     }
 }
 

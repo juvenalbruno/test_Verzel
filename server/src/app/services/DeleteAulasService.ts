@@ -17,9 +17,9 @@ class DeleteAulasService{
         if (!aulaAlreadyExists)
             throw new Error("Aula not exists");
         
-        const aula = aulaRepositories.delete(id);
+       aulaRepositories.delete(id);
 
-        return aula;
+        return
     }
 }
 

@@ -7,9 +7,9 @@ class DeleteModuleController {
 
         const deleteModulesService = new DeleteModulesService();
         
-        const module = await deleteModulesService.execute({ id });
+        await deleteModulesService.execute({ id });
 
-        return res.json(module);
+        return res.json("Deleted");
     }
 }
 
