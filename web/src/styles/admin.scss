@@ -65,6 +65,12 @@
 
       }
 
+      .modules {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+      }
+
       .main-content {
           form {
             input, button {
@@ -97,6 +103,12 @@
     gap: 25px;
     margin: 15px 0 5px;
     min-height: 30px;
+
+    button {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
   }
 
   h2 {

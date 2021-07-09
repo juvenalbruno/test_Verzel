@@ -44,13 +44,18 @@ export function ListModules() {
         history.go(0)
     }
 
+    async function handleOpenModule(modulesId: string){
+        sessionStorage.setItem('modulesId', modulesId);
+        history.push('/admin/module/aulas');
+    }
+
     return (
         <div className="module-content">
             {modulesAula.map(modules => {
                 return( 
                     <>
                         <div className="module-wrapper">
-                            <h2>{ modules.modules_name }</h2>
+                            <button onClick={() => handleOpenModule(modules.id)}><h2>{ modules.modules_name }</h2></button>
                             <hr />
                             <p>ID: {modules.id}</p>
                             
