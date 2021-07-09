@@ -12,7 +12,6 @@ import { ListingUsersController } from "./app/controllers/ListingUsersController
 import { UpdateAulasController } from "./app/controllers/UpdateAulasController";
 import { UpdateModuleController } from "./app/controllers/UpdateModulesController";
 
-import { Admin } from "./middlewares/Admin";
 import { Auth } from "./middlewares/Auth";
 
 const router = Router();
@@ -44,16 +43,15 @@ router
 
 router
     .get("/modules", listingModulesController.handle)
-    .get("/modules/aulas/:id", listingModuleAulaController.handle)
-    .post("/modules", Auth, Admin, createModuleController.handle)
-    .put("/modules/:id", Auth, Admin, updateModulesController.handle)
-    .delete("/modules/:id", Auth, Admin, deleteModulesController.handle);
+    .post("/modules", Auth, createModuleController.handle)
+    .put("/modules/:id", Auth, updateModulesController.handle)
+    .delete("/modules/:id", Auth, deleteModulesController.handle)
+    .get("/modules/aulas/:id", listingModuleAulaController.handle);
     
 router
     .get("/modules/aulas", listingAulasController.handle)
-    // .get("/modules/aulas/:id", listingAulasController.handleListUnique)
-    .post("/modules/aulas", Auth, Admin, createAulaController.handle)
-    .put("/modules/aulas/:id", Auth, Admin, updateAulasController.handle)
-    .delete("/modules/aulas/:id", Auth, Admin, deleteAulasController.handle);
+    .post("/modules/aulas", Auth, createAulaController.handle)
+    .put("/modules/aulas/:id", Auth, updateAulasController.handle)
+    .delete("/modules/aulas/:id", Auth, deleteAulasController.handle);
 
 export { router };

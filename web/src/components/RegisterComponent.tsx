@@ -20,7 +20,7 @@ function RegisterComponent() {
         await api.post("/users", data);
 
         alert('Usuário cadastrado com sucesso!');
-        history.push("/");
+        history.push("/admin");
   }
 
   return (

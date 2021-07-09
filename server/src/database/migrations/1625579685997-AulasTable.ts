@@ -15,6 +15,10 @@ export class AulasTable1625579685997 implements MigrationInterface {
                     type: "varchar",
                 },
                 {
+                    name: "info",
+                    type: "varchar",
+                },
+                {
                     name: "link_video",
                     type: "varchar",
                 },

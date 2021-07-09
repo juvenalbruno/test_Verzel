@@ -14,6 +14,10 @@ class Aulas{
 
     @Column()
     @BeforeUpdate()
+    info: string;
+
+    @Column()
+    @BeforeUpdate()
     link_video: string;
 
     @Column()

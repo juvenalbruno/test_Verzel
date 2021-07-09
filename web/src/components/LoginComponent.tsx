@@ -20,17 +20,14 @@ function LoginComponent() {
     const data = { email, password }
     
     const token = await api.post("/login", data);
-    
-    console.log(token.data)
 
     if (!token.data) {
       alert("E-mail / Password incorrect");
       return;
     }
-
-    // history.push("/user/admin")
-    history.push("/");
-    
+    sessionStorage.clear()
+    sessionStorage.setItem('Token', token.data)
+    history.push("/admin");
   }
 
   return (
