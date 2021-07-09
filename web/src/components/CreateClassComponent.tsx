@@ -5,19 +5,55 @@ import { Button } from './Button';
 export function CreateClass() {
 
     const token = sessionStorage.getItem('Token');
-    const [nameClass, setNameClass] = useState("");
+    const [ModuleID, setModuleID] = useState("");
+    const [AulaName, setAulaName] = useState("");
+    const [Info, setInfo] = useState("");
+    const [LinkVideo, setLinkVideo] = useState("");
+    const [LinkImg, setLinkImg] = useState("");
+    const [Happen, setHappen] = useState("");
 
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
 
-        const data = { Classs_name: nameClass }
+        if (!ModuleID || ModuleID.trim() === "") {
+            alert("Erro ao cadastrar ID do módulo!")
+        }
+        if (!AulaName || AulaName.trim() === "") {
+            alert("Erro ao cadastrar Nome da aula!")
+        }
+        if (!Info || Info.trim() === "") {
+            alert("Erro ao cadastrar Informações da aula!")
+        }
+        if (!LinkVideo || LinkVideo.trim() === "") {
+            alert("Erro ao cadastrar Link da aula!")
+        }
+        if (!LinkImg || LinkImg.trim() === "") {
+            alert("Erro ao cadastrar Link da imagem da aula!")
+        }
+        if (!Happen || Happen.trim() === "") {
+            alert("Erro ao cadastrar Quando ocorrerá!")
+        }
+        
+        const data = {
+            modules_id: ModuleID,
+            aula_name: AulaName,
+            info: Info,
+            link_video: LinkVideo,
+            Link_img: LinkImg,
+            happen: Happen
+        }
 
-        await api.post("/modules/aulas", data, { headers: { 'x-access-token': `${token}` } });
+        const config = { headers: { Authorization: `Bearer ${token}` } }; 
+        await api.post("/modules/aulas", data, config);
 
-        alert(`Módulo ${nameClass} criado com sucesso!`)
+        alert(`Aula ${AulaName} criada com sucesso!`)
+        setModuleID("");
+        setAulaName("");
+        setInfo("");
+        setLinkVideo("");
+        setLinkImg("");
+        setHappen("");
     }
-
-    // modules_id, aula_name, info, link_video, Link_img, happen
 
     
     return (
@@ -28,38 +64,38 @@ export function CreateClass() {
                         <input
                         type="text"
                         placeholder="ID do módulo"
-                        onChange={e => setNameClass(e.target.value)}
-                        value={nameClass}
+                        onChange={e => setModuleID(e.target.value)}
+                        value={ModuleID}
                         />
                         <input
                         type="text"
                         placeholder="Nome da aula"
-                        onChange={e => setNameClass(e.target.value)}
-                        value={nameClass}
+                        onChange={e => setAulaName(e.target.value)}
+                        value={AulaName}
                         />
                         <input
                         type="text"
                         placeholder="Informações da aula"
-                        onChange={e => setNameClass(e.target.value)}
-                        value={nameClass}
+                        onChange={e => setInfo(e.target.value)}
+                        value={Info}
                         />
                         <input
                         type="text"
                         placeholder="Link da aula"
-                        onChange={e => setNameClass(e.target.value)}
-                        value={nameClass}
+                        onChange={e => setLinkVideo(e.target.value)}
+                        value={LinkVideo}
                         />
                         <input
                         type="text"
                         placeholder="Link da imagem da aula"
-                        onChange={e => setNameClass(e.target.value)}
-                        value={nameClass}
+                        onChange={e => setLinkImg(e.target.value)}
+                        value={LinkImg}
                         />
                         <input
                         type="date"
                         placeholder="Quado irá acontecer?"
-                        onChange={e => setNameClass(e.target.value)}
-                        value={nameClass}
+                        onChange={e => setHappen(e.target.value)}
+                        value={Happen}
                         />
                         <Button type="submit">Cadastrar</Button>
                     </form>

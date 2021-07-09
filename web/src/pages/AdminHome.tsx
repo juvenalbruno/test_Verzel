@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { CreateModule } from '../components/CreateModule';
 import { ListModules } from '../components/ListModules';
 import { CreateClass } from '../components/CreateClassComponent';
+import { UpdateModule } from '../components/UpdateModule';
 
 import LogoIMG from '../assets/img/logo.png';
 
@@ -13,7 +14,7 @@ export function AdminHome() {
             <header>
                 <div className="content">
                     <img src={LogoIMG} alt="Verzel" />
-                    <Link to="/">Sair</Link>
+                    <Link to="/user/login">Sair</Link>
                 </div>
             </header>
 
@@ -21,7 +22,10 @@ export function AdminHome() {
                 <h1>Cadastro de Módulos/Aulas:</h1>
 
                 <div className="create-content">
-                    <CreateModule />
+                    <div className="modules">
+                        <CreateModule />
+                        <UpdateModule />
+                    </div>
                     <hr />
                     <CreateClass />
                 </div>
