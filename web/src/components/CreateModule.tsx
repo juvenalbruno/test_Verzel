@@ -28,7 +28,7 @@ export function CreateModule() {
         await api.post("/modules", data, config);
 
         alert(`Módulo ${nameModule} criado com sucesso!`)
-        history.push("/admin")
+        history.go(0);
     }
     return (
             <main>

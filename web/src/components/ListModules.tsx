@@ -2,6 +2,7 @@ import { useEffect,useState } from 'react';
 import { api } from '../services/api';
 
 import { FaTrash, } from 'react-icons/fa'
+import { useHistory } from 'react-router-dom';
 
 // import '../styles/admin.scss'
 
@@ -21,18 +22,26 @@ interface AulasType {
 
 export function ListModules() {
 
+    const token = sessionStorage.getItem('Token');
+    const history = useHistory();
     const [modulesAula, setModulesAula] = useState<ModulesType[]>([]);
     const [Aulas, setAulas] = useState<AulasType[]>([]);
-    const [Atr, setAtr] = useState('');
     
     useEffect(() => {
         api.get("/modules").then(res => setModulesAula(res.data));
         
     }, [])
     
-    async function handleDelete() {
-        console.log('foi')
-        console.log(Atr)
+    async function handleDelete(id: string) {
+        const config = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
+
+        api.delete(`/modules/${id}`, config);
+
+        alert("Módulo deletado!");
+
+        history.go(0)
     }
 
     return (
@@ -45,9 +54,8 @@ export function ListModules() {
                             <hr />
                             <p>ID: {modules.id}</p>
                             
-                            <FaTrash
-                                onClick={handleDelete}
-                            />
+                            <FaTrash onClick={e => handleDelete(modules.id)}/>
+                            
                         </div>
                     </>
                 )

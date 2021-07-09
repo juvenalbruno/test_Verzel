@@ -3,10 +3,12 @@ import { api } from '../services/api';
 import { Button } from './Button';
 
 import '../styles/admin.scss';
+import { useHistory } from 'react-router-dom';
 
 export function UpdateModule() {
 
     const token = sessionStorage.getItem('Token');
+    const history = useHistory();
     const [nameModule, setNameModule] = useState("");
     const [IDModule, setIDModule] = useState("");
 
@@ -31,7 +33,7 @@ export function UpdateModule() {
         await api.put(`/modules/${IDModule}`, data, config);
 
         alert(`Módulo ${nameModule} atualizado com sucesso!`)
-        return;
+        history.go(0)
     }
     return (
             <main>
