@@ -12,11 +12,21 @@ export function CreateModule() {
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
 
+        if (!nameModule || nameModule.trim() === "") {
+            alert("Erro ao cadastrar nome!")
+        }
+        
         const data = { modules_name: nameModule }
 
-        await api.post("/modules", data, { headers: { 'x-access-token': `${token}` } });
+        const config = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
+
+        await api.post("/modules", data, config);
 
         alert(`Módulo ${nameModule} criado com sucesso!`)
+
+        
     }
     return (
             <main>

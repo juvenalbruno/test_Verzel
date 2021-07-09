@@ -9,7 +9,7 @@ class CreateModuleService {
     async execute({ modules_name }: IModuleRequest) {
         const moduleRepositories = getCustomRepository(ModulesRepositories);
 
-        if (!modules_name)
+        if (!modules_name || modules_name.trim() == "")
             return;
         
         const moduleAlreadyExists = await moduleRepositories.findOne({ modules_name });
