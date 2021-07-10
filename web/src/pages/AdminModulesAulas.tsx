@@ -13,7 +13,7 @@ export function AdminModulesAulas() {
             <header>
                 <div className="content">
                     <img src={LogoIMG} alt="Verzel" />
-                    <Link to="/admin">voltar</Link>
+                    <Link to="/admin">Voltar</Link>
                 </div>
             </header>
 

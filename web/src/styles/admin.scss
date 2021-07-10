@@ -109,6 +109,10 @@
       border: 0;
       cursor: pointer;
     }
+
+    &:hover {
+      filter: brightness(.7);
+    }
   }
 
   h2 {
