@@ -45,11 +45,11 @@ router
     .get("/modules", listingModulesController.handle)
     .post("/modules", Auth, createModuleController.handle)
     .put("/modules/:id", Auth, updateModulesController.handle)
-    .delete("/modules/:id", Auth, deleteModulesController.handle)
-    .get("/modules/aulas/:id", listingModuleAulaController.handle);
+    .delete("/modules/:id", Auth, deleteModulesController.handle);
     
 router
     .get("/modules/aulas", listingAulasController.handle)
+    .get("/modules/aulas/:id", listingModuleAulaController.handle)
     .post("/modules/aulas", Auth, createAulaController.handle)
     .put("/modules/aulas/:id", Auth, updateAulasController.handle)
     .delete("/modules/aulas/:id", Auth, deleteAulasController.handle);

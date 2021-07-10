@@ -29,7 +29,6 @@ export function ListModules() {
     
     useEffect(() => {
         api.get("/modules").then(res => setModulesAula(res.data));
-        
     }, [])
     
     async function handleDelete(id: string) {
@@ -38,9 +37,7 @@ export function ListModules() {
         };
 
         api.delete(`/modules/${id}`, config);
-
         alert("Módulo deletado!");
-
         history.go(0)
     }
 
