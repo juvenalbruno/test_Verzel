@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FiLogOut } from 'react-icons/fi';
 import { CreateModule } from '../components/CreateModule';
 import { ListModules } from '../components/ListModules';
 import { CreateClass } from '../components/CreateClassComponent';
@@ -14,7 +15,7 @@ export function AdminHome() {
             <header>
                 <div className="content">
                     <img src={LogoIMG} alt="Verzel" />
-                    <Link to="/user/login">Sair</Link>
+                    <Link to="/user/login"><FiLogOut />Sair</Link>
                 </div>
             </header>
 

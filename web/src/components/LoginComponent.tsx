@@ -1,10 +1,11 @@
 import { FormEvent, useState } from "react";
 import { useHistory } from "react-router";
+import { FiLogIn } from 'react-icons/fi';
 
 import { Button } from "./Button";
+import { api } from "../services/api";
 
 import "../styles/home.scss";
-import { api } from "../services/api";
 
 function LoginComponent() {
   const history = useHistory();
@@ -46,7 +47,7 @@ function LoginComponent() {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit"><FiLogIn />Login</Button>
       </form>
       <div className="separator">ou faça seu Cadastro</div>
       <Button onClick={handleRegister} className="create-user">

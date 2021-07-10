@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { FaConnectdevelop } from "react-icons/fa";
+import { FiCodepen } from "react-icons/fi";
 import { api } from "../services/api";
 
 type ModulesTypeProps = {
@@ -22,7 +22,7 @@ export function ModulesComponents({ id, name }: ModulesTypeProps) {
       <main>
         <div className="modules-wrapper">
           <div className="modules-icon">
-            <FaConnectdevelop />
+            <FiCodepen />
           </div>
           <div className="modules-info">
             <h1>{name}</h1>

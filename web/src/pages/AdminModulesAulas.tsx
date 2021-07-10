@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import { IoArrowBackOutline } from 'react-icons/io5'
 import LogoIMG from '../assets/img/logo.png';
 
 import '../styles/admin.scss'
@@ -13,7 +13,7 @@ export function AdminModulesAulas() {
             <header>
                 <div className="content">
                     <img src={LogoIMG} alt="Verzel" />
-                    <Link to="/admin">Voltar</Link>
+                    <Link to="/admin"> <IoArrowBackOutline /> Voltar Módulos</Link>
                 </div>
             </header>
 
