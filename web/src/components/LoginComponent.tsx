@@ -31,6 +31,10 @@ function LoginComponent() {
     history.push("/admin");
   }
 
+  function handleHome() {
+    history.push("/");
+  }
+
   return (
     <div className="main-content">
       <h2>Login Adm</h2>
@@ -53,6 +57,8 @@ function LoginComponent() {
       <Button onClick={handleRegister} className="create-user">
         Cadastre-se
       </Button>
+
+      <Button style={{background: '#44d600'}} onClick={() => handleHome()}>Menu inicial</Button>
     </div>
   );
 }
