@@ -7,17 +7,21 @@ import { Login } from './pages/Login';
 import { Modules } from './pages/Modules';
 import { Register } from './pages/Register';
 
-import './styles/global.scss'
+import { PrivateRoute } from './utils/PrivateRouter';
+
+import './styles/global.scss';
+
 
 export function App() {
   return (
     <BrowserRouter>
       <Switch>
+        <PrivateRoute path="/admin/module/aula" component={AdminAula}/>
+        <PrivateRoute path="/admin/module" component={AdminModulesAulas} exact/>
+        <PrivateRoute path="/admin" component={AdminHome} exact />
+        
         <Route path="/user/register" component={Register} />
         <Route path="/user/login" component={Login} />
-        <Route path="/admin/module/aula" component={AdminAula} />
-        <Route path="/admin/module" component={AdminModulesAulas} exact/>
-        <Route path="/admin" component={AdminHome} exact/>
         <Route path="/" component={Modules} exact />
       </Switch> 
     </BrowserRouter>

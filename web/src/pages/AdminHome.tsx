@@ -31,7 +31,8 @@ export function AdminHome() {
                     <CreateClass />
                 </div>
 
-                <h1>Módulos e Aulas:</h1>
+                <h1>Módulos:</h1>
+                <p>Selecione o módulo para ver as aulas</p>
                 <ListModules />
             </main>
         </div>

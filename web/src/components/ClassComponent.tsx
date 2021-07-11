@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { api } from "../services/api";
 
 type AulaTypeProps = {
@@ -22,6 +21,7 @@ export function ClassComponent({ id }: AulaTypeProps) {
   useEffect(() => {
     api.get(`/modules/aulas/${id}`).then((res) => setData(res.data));
   }, [id])
+ 
 
   return (
     <div className="aulas-content">

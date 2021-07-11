@@ -50,16 +50,15 @@ export function ListModules() {
         <div className="module-content">
             {modulesAula.map(modules => {
                 return( 
-                    <>
-                        <div className="module-wrapper">
+                    <div className="module-wrapper" key={modules.id}>
+                        <div className="module-info">
                             <button onClick={() => handleOpenModule(modules.id)}><h2>{ modules.modules_name }</h2></button>
-                            <hr />
                             <p>ID: {modules.id}</p>
-                            
-                            <FaTrash onClick={e => handleDelete(modules.id)}/>
-                            
                         </div>
-                    </>
+                        
+                        <FaTrash onClick={e => handleDelete(modules.id)}/>
+                        
+                    </div>
                 )
                 })}
         </div>
