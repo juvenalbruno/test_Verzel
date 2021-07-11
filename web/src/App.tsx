@@ -1,4 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { AdminAula } from './pages/AdminAula';
 
 import { AdminHome } from './pages/AdminHome';
 import { AdminModulesAulas } from './pages/AdminModulesAulas'
@@ -14,7 +15,8 @@ export function App() {
       <Switch>
         <Route path="/user/register" component={Register} />
         <Route path="/user/login" component={Login} />
-        <Route path="/admin/module/aulas" component={AdminModulesAulas} exact/>
+        <Route path="/admin/module/aula" component={AdminAula} />
+        <Route path="/admin/module" component={AdminModulesAulas} exact/>
         <Route path="/admin" component={AdminHome} exact/>
         <Route path="/" component={Modules} exact />
       </Switch> 

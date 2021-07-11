@@ -6,7 +6,6 @@ import LogoIMG from "../assets/img/logo.png";
 import "../styles/adminAulas.scss";
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
-import { UpdateClass } from "../components/UpdateClass";
 
 interface AulasType {
   id: string;
@@ -38,6 +37,11 @@ export function AdminModulesAulas() {
     history.go(0);
   }
 
+  function handleSelectAula(id: string){
+    sessionStorage.setItem('aula_id', id)
+    history.push("/admin/module/aula")
+  }
+
   return (
     <div id="page-admin-aulas">
       <header>
@@ -50,16 +54,15 @@ export function AdminModulesAulas() {
       </header>
 
       <main>
-        <UpdateClass />
-
-        <div className="content">
           <h1>Aulas do Módulo:</h1>
           <div className="aulas-content">
             {aulas.map((Aula) => {
               return (
-                <div className="aulas-wrapper">
+                <div className="aulas-wrapper" key={Aula.id}>
                   <div className="aulas-title">
-                    <h2>Aula: {Aula.aula_name}</h2>
+                    <button onClick={() => handleSelectAula(Aula.id)}>
+                      <h2 key={Aula.id}>{Aula.aula_name}</h2>
+                    </button>
                     <FaTrash onClick={(e) => handleDelete(Aula.id)} />
                   </div>
                   <p>
@@ -86,7 +89,6 @@ export function AdminModulesAulas() {
               );
             })}
           </div>
-        </div>
       </main>
     </div>
   );

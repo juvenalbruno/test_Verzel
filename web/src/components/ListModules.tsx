@@ -11,21 +11,21 @@ interface ModulesType {
     modules_name: string;
 }
 
-interface AulasType {
-    id: string;
-    aula_name: string;
-    info: string;
-    link_video: string;
-    Link_img: string;
-    happen: string;
-}
+// interface AulasType {
+//     id: string;
+//     aula_name: string;
+//     info: string;
+//     link_video: string;
+//     Link_img: string;
+//     happen: string;
+// }
 
 export function ListModules() {
 
     const token = sessionStorage.getItem('Token');
     const history = useHistory();
     const [modulesAula, setModulesAula] = useState<ModulesType[]>([]);
-    const [Aulas, setAulas] = useState<AulasType[]>([]);
+    // const [Aulas, setAulas] = useState<AulasType[]>([]);
     
     useEffect(() => {
         api.get("/modules").then(res => setModulesAula(res.data));
@@ -43,7 +43,7 @@ export function ListModules() {
 
     async function handleOpenModule(modulesId: string){
         sessionStorage.setItem('modulesId', modulesId);
-        history.push('/admin/module/aulas');
+        history.push('/admin/module');
     }
 
     return (

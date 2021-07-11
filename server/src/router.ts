@@ -5,6 +5,7 @@ import { CreateModuleController } from "./app/controllers/CreateModuleController
 import { CreateUserController } from "./app/controllers/CreateUserController";
 import { DeleteAulasController } from "./app/controllers/DeleteAulaController";
 import { DeleteModuleController } from "./app/controllers/DeleteModulesController";
+import { ListingAulaController } from "./app/controllers/ListingAulaController";
 import { ListingAulasController } from "./app/controllers/ListingAulasController";
 import { ListModuleAulaController } from "./app/controllers/ListingModuleAulaService";
 import { ListingModulesController } from "./app/controllers/ListingModulesController";
@@ -29,7 +30,8 @@ const deleteModulesController = new DeleteModuleController();
 const listingModuleAulaController = new ListModuleAulaController();
 
 const createAulaController = new CreateAulaController();
-const listingAulasController = new ListingAulasController()
+const listingAulasController = new ListingAulasController();
+const listingAulaController = new ListingAulaController();
 const updateAulasController = new UpdateAulasController();
 const deleteAulasController = new DeleteAulasController();
 
@@ -50,6 +52,7 @@ router
 router
     .get("/modules/aulas", listingAulasController.handle)
     .get("/modules/aulas/:id", listingModuleAulaController.handle)
+    .get("/modules/aula/:id", listingAulaController.handle)
     .post("/modules/aulas", Auth, createAulaController.handle)
     .put("/modules/aulas/:id", Auth, updateAulasController.handle)
     .delete("/modules/aulas/:id", Auth, deleteAulasController.handle);
