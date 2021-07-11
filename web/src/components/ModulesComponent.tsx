@@ -18,8 +18,6 @@ export function ModulesComponents({ id, name }: ModulesTypeProps) {
   }, [id]);
 
   return (
-    <div id="page-modules">
-      <main>
         <div className="modules-wrapper">
           <div className="modules-icon">
             <FiCodepen />
@@ -29,7 +27,5 @@ export function ModulesComponents({ id, name }: ModulesTypeProps) {
             <p>{aulasQnt.length} aula(s)</p>
           </div>
         </div>
-      </main>
-    </div>
   );
 }

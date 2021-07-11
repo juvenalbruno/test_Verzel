@@ -1,23 +1,53 @@
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { api } from "../services/api";
 
-export function ClassComponent() {
-    return (
-        <div id="page-modules">
-            <main>
-            <div className="aulas-content">
-                    <div className="aulas-wrapper">
-                        <div className="aulas-info">
-                            <img src="https://miro.medium.com/max/3840/1*vHHBwcUFUaHWXntSnqKdCA.png" alt="" />
+type AulaTypeProps = {
+  id: string;
+};
 
-                            <h1>Introdução a ReactJS</h1>
+type AulasType = {
+  id: string;
+  aula_name: string;
+  info: string;
+  link_video: string;
+  Link_img: string;
+  happen: string;
+}
 
-                            <p>Vamos criar uma aplicação web utilizando o React juntamento com o TypeScript e o nodeJS.</p>
-                        </div>
+export function ClassComponent({ id }: AulaTypeProps) {
 
-                        <Link to="#">Assistir aula</Link>
-                    </div>
-                </div>
-            </main>
-        </div>
-    );
+  const [Data, setData] = useState<AulasType[]>([]);
+
+  useEffect(() => {
+    api.get(`/modules/aulas/${id}`).then((res) => setData(res.data));
+  }, [id])
+
+  return (
+    <div className="aulas-content">
+      {Data.map(data => {
+        return (
+          <div className="aulas-wrapper" key={data.id}>
+            <div className="aulas-info">
+              <img
+                src={data.Link_img}
+                alt={data.aula_name}
+              />
+
+              <h1>{data.aula_name}</h1>
+
+              <p>
+                {data.info}
+              </p>
+              <p>
+                {data.happen}
+              </p>
+            </div>
+
+            <a href={data.link_video} target="_blank" rel="noopener noreferrer">Assistir aula</a>
+          </div>
+        )
+      })}
+    </div>
+  );
 }
