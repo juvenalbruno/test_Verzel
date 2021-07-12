@@ -35,10 +35,10 @@
 
 ### Back-end:
 > - Entre, via terminal, na pasta 'server' do projeto;
-> - Instalando as dependências do back-end:
 ```bash
 $ cd server
 ```
+> - Instalando as dependências do back-end:
 ```bash
 $ yarn # ou npm install
 ```
@@ -51,10 +51,10 @@ $ yarn dev # ou npm run dev
 ### Front-end:
 
 > - Entre, via terminal, na pasta 'web' do projeto;
-> - Instalando as dependências do front-end:
 ```bash
 $ cd web
 ```
+> - Instalando as dependências do front-end:
 ```bash
 $ yarn #ou npm install
 ```
