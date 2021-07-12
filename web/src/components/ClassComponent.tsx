@@ -21,12 +21,15 @@ export function ClassComponent({ id }: AulaTypeProps) {
   const [DadosOrd, setDadosOrd] = useState<AulasType[]>([]);
 
   useEffect(() => {    
-    api.get(`/modules/aulas/${id}`).then(res => setDados(res.data));
+    // eslint-disable-next-line no-lone-blocks
+    {
+      id !== '' && (
+        api.get(`/modules/aulas/${id}`).then(res => setDados(res.data))
+    )}
 
   }, [id]);
 
   useEffect(() => {
-
     const resOrdem = Dados.sort(function (a: { aula_name: string }, b: { aula_name: string }) {
       if (a.aula_name > b.aula_name)
         return 1;
@@ -57,7 +60,7 @@ export function ClassComponent({ id }: AulaTypeProps) {
                 {data.info}
               </p>
               <p>
-                {data.happen}
+                <strong>{data.happen}</strong>
               </p>
             </div>
 

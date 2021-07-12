@@ -17,12 +17,18 @@ interface UserDataType {
 
 export function Modules() {
   const [userData, setUserData] = useState<UserDataType[]>([]);
+  const [Data, setData] = useState<UserDataType[]>([]);
   const [Name, setName] = useState("");
   const [ID, setID] = useState("");
 
-  async function handleModules() {
-    const data = await api.get("/modules");
-    const response = data.data;
+
+  useEffect(() => {
+    api.get("/modules").then(res => setData(res.data));
+
+  }, []);
+  
+  useEffect(() => {
+    const response = Data;
 
     const resOrdem = response.sort(function (a: { modules_name: string }, b: { modules_name: string }) {
       if (a.modules_name > b.modules_name)
@@ -34,13 +40,7 @@ export function Modules() {
     });
 
     setUserData(resOrdem);
-    setID(resOrdem[0].id);
-    setName(resOrdem[0].modules_name);
-  }
-
-  useEffect(() => {
-    handleModules();
-  }, []);
+  }, [Data]);
 
   return (
     <div id="page-modules">

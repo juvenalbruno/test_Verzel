@@ -13,7 +13,7 @@ interface AulasType {
   info: string;
   link_video: string;
   Link_img: string;
-  happen: string;
+  happen: Date;
 }
 
 export function AdminModulesAulas() {

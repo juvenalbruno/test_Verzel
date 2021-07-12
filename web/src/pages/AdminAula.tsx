@@ -36,7 +36,7 @@ export function AdminAula() {
       info: '',
       link_video: '',
       Link_img: '',
-      happen: '',
+      happen: '00-00-00',
     }
   ]);
 
