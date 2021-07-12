@@ -38,7 +38,7 @@ const deleteAulasController = new DeleteAulasController();
 
 router
     .post("/users", createUserController.handle)
-    .get("/users", listingUserController.handle);
+    // .get("/users", listingUserController.handle);
 
 router
     .post("/login", authUserController.handle);
