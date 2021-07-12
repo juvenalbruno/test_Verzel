@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { FaTrash } from "react-icons/fa";
 import LogoIMG from "../assets/img/logo.png";
+import { api } from "../services/api";
 
 import "../styles/adminAulas.scss";
-import { useEffect, useState } from "react";
-import { api } from "../services/api";
 
 interface AulasType {
   id: string;
@@ -73,11 +73,11 @@ export function AdminModulesAulas() {
                     <strong>Informação: </strong>
                     {Aula.info}
                   </p>
-                  <p>
+                  <p className="Link">
                     <strong>Link da Aula:</strong>
                     {Aula.link_video}
                   </p>
-                  <p>
+                  <p className="Link">
                     <strong>Link Imagem aula: </strong>
                     {Aula.Link_img}
                   </p>

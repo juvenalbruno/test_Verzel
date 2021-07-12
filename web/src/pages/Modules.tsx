@@ -32,8 +32,6 @@ export function Modules() {
       else
         return 0;
     });
-    
-    console.log(resOrdem)
 
     setUserData(resOrdem);
     setID(resOrdem[0].id);

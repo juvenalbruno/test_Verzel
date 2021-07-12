@@ -82,12 +82,14 @@
               text-overflow: clip;
               word-break: break-all;
             }
+            
 
             .aulas-title {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 margin-bottom: 5px;
+                
 
                 h2 {
                     font: 300 22px 'Roboto', sans-serif;
@@ -108,6 +110,13 @@
             p {
                 font: 300 14px 'Roboto', sans-serif;
                 line-height: 2;
+            }
+
+            .Link {
+              height: 50px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
             }
         }
 

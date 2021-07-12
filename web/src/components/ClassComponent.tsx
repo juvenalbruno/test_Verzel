@@ -16,13 +16,18 @@ type AulasType = {
 
 export function ClassComponent({ id }: AulaTypeProps) {
 
-  const [Data, setData] = useState<AulasType[]>([]);
+  const [Dados, setDados] = useState<AulasType[]>([]);
 
-  async function handleAulas() {
-    const data = await api.get(`/modules/aulas/${id}`);
-    const response = data.data;
+  const [DadosOrd, setDadosOrd] = useState<AulasType[]>([]);
 
-    const resOrdem = response.sort(function (a: { aula_name: string }, b: { aula_name: string }) {
+  useEffect(() => {    
+    api.get(`/modules/aulas/${id}`).then(res => setDados(res.data));
+
+  }, [id]);
+
+  useEffect(() => {
+
+    const resOrdem = Dados.sort(function (a: { aula_name: string }, b: { aula_name: string }) {
       if (a.aula_name > b.aula_name)
         return 1;
       else if (b.aula_name > a.aula_name)
@@ -31,17 +36,13 @@ export function ClassComponent({ id }: AulaTypeProps) {
         return 0;
     });
 
-    setData(resOrdem);
-  }
+    setDadosOrd(resOrdem)
 
-  useEffect(() => {
-    handleAulas()
-  }, [id])
- 
+  }, [Dados]);
 
   return (
     <div className="aulas-content">
-      {Data.map(data => {
+      {DadosOrd.map(data => {
         return (
           <div className="aulas-wrapper" key={data.id}>
             <div className="aulas-info">

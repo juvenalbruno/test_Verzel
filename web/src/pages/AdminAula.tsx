@@ -8,33 +8,49 @@ import { Button } from "../components/Button";
 import LogoIMG from "../assets/img/logo.png";
 import "../styles/admin.scss";
 
+type AulasType = {
+  id: string;
+  aula_name: string;
+  info: string;
+  link_video: string;
+  Link_img: string;
+  happen: string;
+}
 
 export function AdminAula() {
+  const token = sessionStorage.getItem("Token");
+  const aula_id = sessionStorage.getItem("aula_id");
+  const history = useHistory();
+
   const [ModuleID, setModuleID] = useState('');
   const [AulaName, setAulaName] = useState('');
   const [Info, setInfo] = useState('');
   const [LinkVideo, setLinkVideo] = useState('');
   const [LinkImg, setLinkImg] = useState('');
   const [Happen, setHappen] = useState('');
-
-  const token = sessionStorage.getItem("Token");
-  const aula_id = sessionStorage.getItem("aula_id");
-
-  const history = useHistory();
-
-  async function GetAula() {
-    const data = await api.get(`/modules/aula/${aula_id}`);
-
-    setModuleID(data.data[0].id);
-    setAulaName(data.data[0].aula_name);
-    setInfo(data.data[0].info);
-    setLinkVideo(data.data[0].link_video);
-    setLinkImg(data.data[0].Link_img);
-  }
+  
+  const [Dados, setDados] = useState<AulasType[]>([
+    {
+      id: '',
+      aula_name: '',
+      info: '',
+      link_video: '',
+      Link_img: '',
+      happen: '',
+    }
+  ]);
 
   useEffect(() => {
-    GetAula();
+    api.get(`/modules/aula/${aula_id}`).then(res => setDados(res.data));
   }, [aula_id]);
+
+  useEffect(() => {
+    setModuleID(Dados[0].id);
+    setAulaName(Dados[0].aula_name);
+    setInfo(Dados[0].info);
+    setLinkVideo(Dados[0].link_video);
+    setLinkImg(Dados[0].Link_img);
+  }, [Dados]);
   
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
