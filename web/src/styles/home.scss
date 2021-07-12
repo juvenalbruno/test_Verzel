@@ -2,6 +2,7 @@
     display: flex;
     align-items: stretch;
     height: 100vh;
+    max-width: 100vw;
 }
 
 aside {
@@ -140,4 +141,38 @@ main {
         background: #a8a8b3;
         margin-left: 16px;
     }
+}
+
+@media(max-width: 830px){
+    #page-auth {
+        flex-direction: column;
+    }
+
+    aside {
+        max-height: 250px;
+        width: 100%;
+        padding: 50px 0px;
+
+        img {
+            max-width: 250px;
+        }
+    
+
+        strong {
+            text-align: center;
+            margin-top: 0;
+            font-size: 26px;
+        }
+    }
+
+    main {
+        .main-content {
+            margin-bottom: 25px;
+        }
+    }
+
+    .separator {
+        margin: 15px 0;
+    }
+
 }

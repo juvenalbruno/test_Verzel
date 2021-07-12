@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     a {
         background: #00aeff;
         border: 1px solid white;
@@ -51,6 +50,7 @@
         display: flex;
         align-items: flex-start;
         flex-direction: column;
+        padding: 0 25px;
     
         .modules-title {
             margin: 42px 0 24px;
@@ -217,5 +217,49 @@
                 color: #FFF;
             }
         }
+    }
+}
+
+@media(max-width: 780px){
+    #page-modules {
+        main {
+            align-items: center;
+
+            .modules-content {
+                justify-content: center;
+                margin: 0 auto;
+            }
+
+            .aulas-content {
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media(max-width: 390px) {
+    .modules-wrapper {
+        justify-content: center;
+        align-items: center;
+        width: 240px !important;
+        
+        h1, p {
+            text-align: center;
+        }
+    }
+}
+
+@media(max-width: 530px) {
+    .info {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .modules-icon {
+        display: none;
+    }
+    .aulas-icon {
+        display: none;
     }
 }

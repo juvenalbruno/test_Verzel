@@ -55,7 +55,7 @@ export function AdminModulesAulas() {
 
       <main>
           <h1>Aulas do Módulo:</h1>
-          <p>Selecione a aula</p>
+          <p>Selecione a aula do módulo:</p>
           <div className="aulas-content">
             {aulas.map((Aula) => {
               return (
@@ -74,14 +74,17 @@ export function AdminModulesAulas() {
                     <strong>Informação: </strong>
                     {Aula.info}
                   </p>
-                  <p className="Link">
+                  
+                  <div className="Link">
+                    <p className="Link">
                     <strong>Link da Aula:</strong>
-                    {Aula.link_video}
+                    <textarea name={Aula.aula_name} id={Aula.id} rows={5} value={Aula.link_video} />
                   </p>
                   <p className="Link">
                     <strong>Link Imagem aula: </strong>
-                    {Aula.Link_img}
+                    <textarea name={Aula.aula_name} id={Aula.id} rows={5} value={Aula.Link_img} />
                   </p>
+                  </div>
                   <p>
                     <strong>Quando acontecerá: </strong>
                     {Aula.happen}
