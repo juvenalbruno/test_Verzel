@@ -38,16 +38,14 @@
 > - Instalando as dependências do back-end:
 ```bash
 $ cd server
-
-$ yarn 
-# ou 
-# $ npm install
 ```
+```bash
+$ yarn # ou npm install
+```
+
 > - Execute o back-end do projeto com:
 ```bash
-$ yarn dev 
-# ou 
-# $ npm run dev
+$ yarn dev # ou npm run dev
 ```
 ---
 ### Front-end:
@@ -56,14 +54,13 @@ $ yarn dev
 > - Instalando as dependências do front-end:
 ```bash
 $ cd web
-
+```
+```bash
 $ yarn #ou npm install
 ```
 > - Execute o front-end do projeto com:
 ```bash
-$ yarn start 
-# ou 
-# $ npm run start
+$ yarn start # ou npm run start
 ```
 
 ---
