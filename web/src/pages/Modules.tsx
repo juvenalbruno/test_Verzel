@@ -21,11 +21,23 @@ export function Modules() {
   const [ID, setID] = useState("");
 
   async function handleModules() {
-    const response = await api.get("/modules");
+    const data = await api.get("/modules");
+    const response = data.data;
 
-    setUserData(response.data);
-    setID(response.data[0].id);
-    setName(response.data[0].modules_name);
+    const resOrdem = response.sort(function (a: { modules_name: string }, b: { modules_name: string }) {
+      if (a.modules_name > b.modules_name)
+        return 1;
+      else if (b.modules_name > a.modules_name)
+        return -1;
+      else
+        return 0;
+    });
+    
+    console.log(resOrdem)
+
+    setUserData(resOrdem);
+    setID(resOrdem[0].id);
+    setName(resOrdem[0].modules_name);
   }
 
   useEffect(() => {

@@ -18,8 +18,24 @@ export function ClassComponent({ id }: AulaTypeProps) {
 
   const [Data, setData] = useState<AulasType[]>([]);
 
+  async function handleAulas() {
+    const data = await api.get(`/modules/aulas/${id}`);
+    const response = data.data;
+
+    const resOrdem = response.sort(function (a: { aula_name: string }, b: { aula_name: string }) {
+      if (a.aula_name > b.aula_name)
+        return 1;
+      else if (b.aula_name > a.aula_name)
+        return -1;
+      else
+        return 0;
+    });
+
+    setData(resOrdem);
+  }
+
   useEffect(() => {
-    api.get(`/modules/aulas/${id}`).then((res) => setData(res.data));
+    handleAulas()
   }, [id])
  
 
