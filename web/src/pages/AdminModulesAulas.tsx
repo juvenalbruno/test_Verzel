@@ -55,6 +55,7 @@ export function AdminModulesAulas() {
 
       <main>
           <h1>Aulas do Módulo:</h1>
+          <p>Selecione a aula</p>
           <div className="aulas-content">
             {aulas.map((Aula) => {
               return (

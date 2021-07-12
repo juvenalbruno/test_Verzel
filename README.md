@@ -126,6 +126,3 @@ http://localhost:3000/admin/module
 ```bash
 http://localhost:3000/admin/module/aula
 ```
----
----
-## Utilização da aplicação:
